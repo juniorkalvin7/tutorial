@@ -1,0 +1,21 @@
+# instalaçao
+sudo dnf install lxc lxc-templates lxc-extra
+lxc-ls --version
+lxc-checkconfig
+ll /usr/share/lxc/templates/
+sudo lxc-create -t centos -n centos-test
+sudo mv /usr/bin/yum /usr/bin/yum2dnf
+sudo ln -s /usr/bin/yum-deprecated /usr/bin/yum
+ll /usr/bin/yum
+sudo lxc-create -t centos -n centos-test
+sudo lxc-ls
+sudo lxc-info -n centos-test
+sudo lxc-start -n centos-test
+sudo lxc-start -F -n centos-test
+sudo yum install libvirt-daemon
+brctl show
+sudo vim /var/lib/lxc/centos-test/config
+sudo lxc-start -F -n centos-test
+sudo lxc-start -n centos-test 
+sudo lxc-attach -n centos-test
+
